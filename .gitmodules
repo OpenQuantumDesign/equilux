@@ -1,0 +1,12 @@
+[submodule "midstack"]
+	path = midstack
+	url = https://github.com/OpenQuantumDesign/midstack
+[submodule "analog-simulator"]
+	path = analog-simulator
+	url = https://github.com/OpenQuantumDesign/analog-simulator
+[submodule "compiler_infrastructure"]
+	path = compiler_infrastructure
+	url = https://github.com/OpenQuantumDesign/compiler_infrastructure
+[submodule "TrICal"]
+	path = TrICal
+	url = https://github.com/OpenQuantumDesign/TrICal

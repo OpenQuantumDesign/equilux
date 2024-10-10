@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "midstack"
+version = "0.0.0"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.4",
+    "qutip==5.0.1",
+    "Cython~=3.0.10",
+    "filelock~=3.13.4",
+    "numpy~=1.0",
+#    "oqd_compiler_infrastructure",
+]
+
+[project.optional-dependencies]
+docs = [
+    "pymdown-extensions",
+    "mkdocstrings",
+    "mkdocs-material",
+    "mkdocstrings-python",
+    "mdx_truly_sane_lists",
+    "jupyter",
+    "jupyter_contrib_nbextensions",
+    "mkdocs-jupyter",
+]
+test = ["unittest_prettify"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["midstack*"]
