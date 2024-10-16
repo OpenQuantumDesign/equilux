@@ -18,10 +18,24 @@ extra:
       name: Open Quantum Design Website
 
 nav:
-  - Core: '!include ./midstack/mkdocs.yml'
-  - Compiler Infrastructure: '!include ./compiler_infrastructure/mkdocs.yaml'
-  - Analog Simulators: '!include ./analog-simulator/mkdocs.yml'
-#  - Atomic Simulators: '!include ./TrICal/mkdocs.yaml'
+  - Core: '!include ./src/midstack/mkdocs.yaml'
+  - Compiler Infrastructure: '!include ./src/compiler_infrastructure/mkdocs.yaml'
+  - Analog Simulators: '!include ./src/analog-simulator/mkdocs.yaml'
+
+  - Tutorials:
+      - Analog: tutorials/analog.md
+      - Examples:
+          - Analog:
+              - Rabi Flopping: examples/one_qubit_rabi_flopping.ipynb
+              - Adiabatic state:
+                  - Linear time-dependence: examples/adiabatic_linear.ipynb
+                  - Sigmoid time-dependence: examples/adiabatic_sigmoid.ipynb
+              - Bell state preparation: examples/bell_state.ipynb
+              - GHZ state preparation: examples/ghz_state.ipynb
+              - Ising model: examples/ising_model.ipynb
+              - QAOA: examples/qaoa.ipynb
+
+#  - Atomic Simulators: '!include ./src/TrICal/mkdocs.yaml'
 
 theme:
   name: material
@@ -66,9 +80,10 @@ plugins:
       handlers:
         python:
           paths:
-            - ./compiler_infrastructure/src
-            - ./midstack/src
-            - ./analog-simulator/src
+            - ./src/compiler_infrastructure/src
+            - ./src/midstack/src
+            - ./src/analog-simulator/src
+#            - ./src/analog-simulator/src
           options:
             show_source: true
             show_root_heading: true
