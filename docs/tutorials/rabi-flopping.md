@@ -16,12 +16,12 @@ from rich import print as pprint
 
 import numpy as np
 
-from midstack.interface.analog.operator import *
-from midstack.interface.analog.operations import *
-from midstack.backend.metric import *
-from midstack.backend.task import Task
-from analog_sim.base import TaskArgsAnalogSimulator
-from midstack.backend import QutipBackend
+from core.interface.analog.operator import *
+from core.interface.analog.operations import *
+from core.backend.metric import *
+from core.backend.task import Task
+from analog_emulator.base import TaskArgsAnalogSimulator
+from core.backend import QutipBackend
 
 from examples.emulation.utils import plot_metrics_counts
 ```

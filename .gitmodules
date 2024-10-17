@@ -1,12 +1,10 @@
-[submodule "midstack"]
-	path = src/midstack
-	url = https://github.com/OpenQuantumDesign/midstack
-[submodule "analog-simulator"]
-	path = src/analog-simulator
-	url = https://github.com/OpenQuantumDesign/analog-simulator
-[submodule "compiler_infrastructure"]
-	path = src/compiler_infrastructure
-	url = https://github.com/OpenQuantumDesign/compiler_infrastructure
-[submodule "TrICal"]
-	path = src/TrICal
-	url = https://github.com/OpenQuantumDesign/TrICal
+
+[submodule "oqd-cloud"]
+	path = "oqd-cloud"
+	url = https://github.com/OpenQuantumDesign/oqd-cloud
+[submodule "oqd-core"]
+	path = oqd-core
+	url = https://github.com/OpenQuantumDesign/oqd-core
+[submodule "oqd-analog-emulator"]
+	path = oqd-analog-emulator
+	url = https://github.com/OpenQuantumDesign/oqd-analog-emulator

@@ -1,22 +1,18 @@
-#%% md
-# One qubit Rabi flopping
-
 #%%
 import numpy as np
-from rich import print as pprint
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 #%%
-from midstack.interface.analog.operator import *
-from midstack.interface.analog.operation import *
-from midstack.backend.metric import *
-from midstack.backend.task import Task, TaskArgsAnalog
+from core.interface.analog.operator import *
+from core.interface.analog.operation import *
+from core.backend.metric import *
+from core.backend.task import Task, TaskArgsAnalog
 
-from analog_sim.base import QutipBackend
+from analog_emulator.qutip_backend import QutipBackend
 
-from client import Client
-from provider import Provider
+from cloud.client import Client
+from cloud.provider import Provider
 
 #%%
 X = PauliX()
@@ -45,6 +41,9 @@ print(circuit.model_dump_json())
 print(AnalogCircuit.model_validate_json(circuit.model_dump_json()))
 
 #%%
+circuit.model_json_schema()
+
+#%%
 # define task args
 args = TaskArgsAnalog(
     n_shots=100,
@@ -56,11 +55,13 @@ args = TaskArgsAnalog(
 )
 
 task = Task(program=circuit, args=args)
-
+task.model_dump_json()
 #%%
 backend = QutipBackend()
 expt, args = backend.compile(task=task)
-results = backend.run(experiment=expt, args=args)
+# results = backend.run(experiment=expt, args=args)
+a = {'experiment': expt, 'args': args}
+results = backend.run(task=task)
 
 #%%
 fig, ax = plt.subplots(1, 1, figsize=[6, 3])
@@ -69,7 +70,7 @@ colors = sns.color_palette(palette="crest", n_colors=4)
 for k, (name, metric) in enumerate(results.metrics.items()):
     ax.plot(results.times, metric, label=f"$\\langle {name} \\rangle$", color=colors[k])
 ax.legend()
-plt.show()
+# plt.show()
 
 #%%
 fig, axs = plt.subplots(4, 1, sharex=True, figsize=[5, 9])
@@ -87,7 +88,6 @@ ax = axs[1]
 ax.bar(x=bases, height=list(counts.values()), color=colors[1])
 ax.set(ylabel="Count")
 
-
 ax = axs[2]
 ax.bar(x=bases, height=state.real, color=colors[2])
 ax.set(ylabel="Amplitude (real)")
@@ -96,30 +96,21 @@ ax = axs[3]
 ax.bar(x=bases, height=state.imag, color=colors[3])
 ax.set(xlabel="Basis state", ylabel="Amplitude (imag)", ylim=[-np.pi, np.pi])
 
-plt.show()
+# plt.show()
 
 #%%
 client = Client()
 provider = Provider()
 client.connect(
     provider=provider,
-    username="benjimaclellan",
+    username="ben",
     password="pwd"
 )
 client.status_report
 
 #%%
-# print(client.jobs)
-backend = "qutip"
-client.submit_job(task=task, backend="qutip")
+print(client.jobs)
+job = client.submit_job(task=task, backend="analog-qutip")
 
 #%%
-provider.job_submission_url(backend=backend)
-
-
-#%%
-t = task.model_dump_json()
-AnalogCircuit.parse_raw(circuit.model_dump_json())
-
-
-#%%
+client.retrieve_job(job_id=job.job_id)

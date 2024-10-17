@@ -7,12 +7,12 @@ from rich import print as pprint
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from midstack.interface.analog.operator import *
-from midstack.interface.analog.operation import *
-from midstack.backend.metric import *
-from midstack.backend.task import Task
+from core.interface.analog.operator import *
+from core.interface.analog.operation import *
+from core.backend.metric import *
+from core.backend.task import Task
 
-from analog_sim.base import QutipBackend, TaskArgsAnalogSimulator
+from analog_emulator.base import QutipBackend, TaskArgsAnalogSimulator
 
 #%%
 X = PauliX()
