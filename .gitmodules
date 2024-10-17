@@ -1,0 +1,12 @@
+[submodule "oqd-core"]
+	path = oqd-core
+	url = https://github.com/OpenQuantumDesign/oqd-core
+[submodule "oqd-cloud"]
+	path = oqd-cloud
+	url = https://github.com/OpenQuantumDesign/oqd-cloud
+[submodule "oqd-analog-emulator"]
+	path = oqd-analog-emulator
+	url = https://github.com/OpenQuantumDesign/oqd-analog-emulator
+[submodule "oqd-compiler-infrastructure"]
+	path = oqd-compiler-infrastructure
+	url = https://github.com/OpenQuantumDesign/oqd-compiler-infrastructure

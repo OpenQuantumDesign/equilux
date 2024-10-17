@@ -1,4 +1,4 @@
-site_name: Open Quantum Design
+site_name: "Open Quantum Design - Core"
 site_description: Open Quantum Design - the world's first open-source quantum computer
 
 repo_name: OpenQuantumDesign/oqd
@@ -18,9 +18,10 @@ extra:
       name: Open Quantum Design Website
 
 nav:
-  - Core: '!include ./src/midstack/mkdocs.yaml'
-  - Compiler Infrastructure: '!include ./src/compiler_infrastructure/mkdocs.yaml'
-  - Analog Simulators: '!include ./src/analog-simulator/mkdocs.yaml'
+  - Core: '!include ./oqd-core/mkdocs.yaml'
+  - Analog Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
+  - Cloud: '!include ./oqd-cloud/mkdocs.yaml'
+  - Compiler Infrastructure: '!include ./oqd-compiler-infrastructure/mkdocs.yaml'
 
   - Tutorials:
       - Analog: tutorials/analog.md
@@ -80,10 +81,10 @@ plugins:
       handlers:
         python:
           paths:
-            - ./src/compiler_infrastructure/src
-            - ./src/midstack/src
-            - ./src/analog-simulator/src
-#            - ./src/analog-simulator/src
+            - ./oqd-compiler-infrastructure/src
+            - ./oqd-core/src
+            - ./oqd-analog-emulator/src
+            - ./oqd-cloud/src
           options:
             show_source: true
             show_root_heading: true
