@@ -26,7 +26,8 @@ import numpy as np
 from midstack.interface.analog.operator import *
 from midstack.interface.analog.operations import *
 from midstack.backend.metric import *
-from midstack.backend.task import Task, TaskArgsAnalog
+from midstack.backend.task import Task
+from analog_sim.base import TaskArgsAnalogSimulator
 from midstack.backend import QutipBackend
 
 from examples.emulation.utils import plot_metrics_counts

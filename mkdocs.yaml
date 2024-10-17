@@ -6,7 +6,7 @@ repo_url: https://github.com/OpenQuantumDesign/oqd
 
 copyright: Copyright &copy; 2024 Open Quantum Design
 
-use_directory_urls: true
+use_directory_urls: false
 
 extra:
   social:

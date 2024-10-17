@@ -48,7 +48,8 @@ import matplotlib.pyplot as plt
 from midstack.interface.analog.operator import *
 from midstack.interface.analog.operations import *
 from midstack.backend.metric import *
-from midstack.backend.task import Task, TaskArgsAnalog
+from midstack.backend.task import Task
+from analog_sim.base import TaskArgsAnalogSimulator
 from midstack.backend import QutipBackend
 
 X = PauliX()
@@ -59,7 +60,7 @@ Hx = AnalogGate(hamiltonian=X)
 circuit = AnalogCircuit()
 circuit.evolve(duration=10, gate=Hx)
 
-args = TaskArgsAnalog(
+args = TaskArgsAnalogSimulator(
     n_shots=100,
     fock_cutoff=4,
     metrics={"Z": Expectation(operator=Z)},
