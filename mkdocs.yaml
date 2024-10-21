@@ -1,8 +1,8 @@
-site_name: "Open Quantum Design - Core"
+site_name: "Open Quantum Design"
 site_description: Open Quantum Design - the world's first open-source quantum computer
 
-repo_name: OpenQuantumDesign/oqd
-repo_url: https://github.com/OpenQuantumDesign/oqd
+repo_name: OpenQuantumDesign/quarry
+repo_url: https://github.com/OpenQuantumDesign/quarry.git
 
 copyright: Copyright &copy; 2024 Open Quantum Design
 
@@ -18,11 +18,8 @@ extra:
       name: Open Quantum Design Website
 
 nav:
-  - Core: '!include ./oqd-core/mkdocs.yaml'
-  - Analog Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
-  - Cloud: '!include ./oqd-cloud/mkdocs.yaml'
-  - Compiler Infrastructure: '!include ./oqd-compiler-infrastructure/mkdocs.yaml'
-
+  - Getting Started: getting-started.md
+  - About: about.md
   - Tutorials:
       - Analog: tutorials/analog.md
       - Examples:
@@ -36,7 +33,15 @@ nav:
               - Ising model: examples/ising_model.ipynb
               - QAOA: examples/qaoa.ipynb
 
-#  - Atomic Simulators: '!include ./src/TrICal/mkdocs.yaml'
+  - Core: '!include ./oqd-core/mkdocs.yaml'
+  - Emulators:
+      - Analog Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
+#      - Atomic Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
+  - Cloud: '!include ./oqd-cloud/mkdocs.yaml'
+  - Compiler Infrastructure: '!include ./oqd-compiler-infrastructure/mkdocs.yaml'
+  - Hardware:
+      - About OQD Hardware: hardware/about-oqd.md
+      - Open Hardware Devices: hardware/devices.md
 
 theme:
   name: material

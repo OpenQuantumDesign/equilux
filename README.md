@@ -78,8 +78,46 @@ plt.plot(results.times, results.metrics["Z"], label=f"$\\langle Z \\rangle$")
 
 ## The stack <a name="stack"></a>
 
+[//]: # (```mermaid)
+
+[//]: # (flowchart LR)
+
+[//]: # (    )
+[//]: # (    Digital[Digital Circuit] --> openQASM&#40;openQASM&#41;)
+
+[//]: # ()
+[//]: # (    Analog[Analog Circuit] --> openQSIM&#40;openQSIM&#41;)
+
+[//]: # (    Atomic[Atomic Protocol] ---> openAPL&#40;openAPL&#41;)
+
+[//]: # ()
+[//]: # (    openQSIM --> |compile| openAPL)
+
+[//]: # (    openQASM --> |compile| openAPL)
+
+[//]: # ()
+[//]: # (    openQSIM ----> Qutip)
+
+[//]: # (    openQSIM ----> Quantumoptics.jl)
+
+[//]: # ()
+[//]: # (    openQASM ----> TensorCircuit)
+
+[//]: # (    openQASM ----> PastaQ.jl)
+
+[//]: # ()
+[//]: # (    openAPL ---> Hardware{Bare metal})
+
+[//]: # (    openAPL ---> IonSim.jl)
+
+[//]: # (```)
+
+
 ```mermaid
 flowchart LR
+    AnalogInterface[Analog]
+    DigitalInterface[Digital]
+    
     Digital[Digital Circuit] --> openQASM(openQASM)
 
     Analog[Analog Circuit] --> openQSIM(openQSIM)
@@ -97,6 +135,7 @@ flowchart LR
     openAPL ---> Hardware{Bare metal}
     openAPL ---> IonSim.jl
 ```
+
 
 ### Interfaces <a name="frontends"></a>
 
