@@ -19,7 +19,6 @@ extra:
 
 nav:
   - Getting Started: getting-started.md
-  - About: about.md
   - Tutorials:
       - Analog: tutorials/analog.md
       - Examples:
@@ -42,6 +41,8 @@ nav:
   - Hardware:
       - About OQD Hardware: hardware/about-oqd.md
       - Open Hardware Devices: hardware/devices.md
+
+  - About: about.md
 
 theme:
   name: material
