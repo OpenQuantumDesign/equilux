@@ -45,12 +45,12 @@ To get started you can run one of the example scripts provided. For example, to 
 ```python
 import matplotlib.pyplot as plt
 
-from core.interface.analog.operator import *
-from core.interface.analog.operations import *
-from core.backend.metric import *
-from core.backend.task import Task
-from analog_emulator.base import TaskArgsAnalogSimulator
-from core.backend import QutipBackend
+from oqd_core.interface.analog.operator import *
+from oqd_core.interface.analog.operations import *
+from oqd_core.backend.metric import *
+from oqd_core.backend.task import Task
+from oqd_analog_emulator.base import TaskArgsAnalogSimulator
+from oqd_core.backend import QutipBackend
 
 X = PauliX()
 Z = PauliZ()
@@ -61,10 +61,10 @@ circuit = AnalogCircuit()
 circuit.evolve(duration=10, gate=Hx)
 
 args = TaskArgsAnalogSimulator(
-    n_shots=100,
-    fock_cutoff=4,
-    metrics={"Z": Expectation(operator=Z)},
-    dt=1e-3,
+  n_shots=100,
+  fock_cutoff=4,
+  metrics={"Z": Expectation(operator=Z)},
+  dt=1e-3,
 )
 
 task = Task(program=circuit, args=args)

@@ -21,9 +21,9 @@ For example, to implement the one-qubit Rabi flopping from above,
 
 ```py
 import numpy as np
-from core.interface.analog.operator import PauliX
-from core.interface.analog.dissipation import Dissipation
-from core.interface.analog.operations import AnalogGate, AnalogCircuit
+from oqd_core.interface.analog.operator import PauliX
+from oqd_core.interface.analog.dissipation import Dissipation
+from oqd_core.interface.analog.operations import AnalogGate, AnalogCircuit
 
 circuit = AnalogCircuit()
 gate = AnalogGate(hamiltonian=-(np.pi / 4) * PauliX())
@@ -43,7 +43,7 @@ Hamiltonians are represented using Pauli and ladder operators, which act on the 
 Let's start by creating a more complex Hamiltonian, composed of Pauli operators on the qubit registers.
 
 ```py
-from core.interface.analog.operator import PauliX
+from oqd_core.interface.analog.operator import PauliX
 
 interaction = PauliX() @ PauliX()
 ```

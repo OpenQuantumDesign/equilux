@@ -23,12 +23,12 @@ from rich import print as pprint
 
 import numpy as np
 
-from core.interface.analog.operator import *
-from core.interface.analog.operations import *
-from core.backend.metric import *
-from core.backend.task import Task
-from analog_emulator.base import TaskArgsAnalogSimulator
-from core.backend import QutipBackend
+from oqd_core.interface.analog.operator import *
+from oqd_core.interface.analog.operations import *
+from oqd_core.backend.metric import *
+from oqd_core.backend.task import Task
+from oqd_analog_emulator.base import TaskArgsAnalogSimulator
+from oqd_core.backend import QutipBackend
 
 from examples.emulation.utils import plot_metrics_counts
 ```
