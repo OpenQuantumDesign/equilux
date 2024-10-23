@@ -16,20 +16,19 @@ $$
 
 ### Creating an analog quantum circuit
 
-In `midstack`, time evolution is specified as an **analog gate** (`AnalogGate`).
+In `oqd_core`, time evolution is specified as an **analog gate** (`AnalogGate`).
 For example, to implement the one-qubit Rabi flopping from above,
 
 ```py
 import numpy as np
 from oqd_core.interface.analog.operator import PauliX
-from oqd_core.interface.analog.dissipation import Dissipation
-from oqd_core.interface.analog.operations import AnalogGate, AnalogCircuit
+from oqd_core.interface.analog.operation import AnalogGate, AnalogCircuit
 
 circuit = AnalogCircuit()
 gate = AnalogGate(hamiltonian=-(np.pi / 4) * PauliX())
 circuit.evolve(
     duration=1.0,
-    gate=H
+    gate=gate
 )
 ```
 
@@ -67,12 +66,3 @@ graph TD;
 ```
 
 ///
-
-We will go through concrete examples of how to get started with this in Analog Demos
-
-## Atomic mode
-
-## Classical emulators
-
-Each mode has a suite of backend classical emulators for designing,
-benchmarking, and studying programs run on quantum computers.

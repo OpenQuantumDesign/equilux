@@ -6,7 +6,7 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 ![versions](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue)
-[![CI](https://github.com/OpenQuantumDesign/midstack/actions/workflows/CI.yml/badge.svg)](https://github.com/OpenQuantumDesign/midstack/actions/workflows/CI.yml)
+[![CI](https://github.com/OpenQuantumDesign/oqd_core/actions/workflows/CI.yml/badge.svg)](https://github.com/OpenQuantumDesign/oqd_core/actions/workflows/CI.yml)
 
 ## What's here
 
@@ -28,13 +28,13 @@ pip install git+https://github.com/OpenQuantumDesign/compiler_infrastructure.git
 then:
 
 ```bash
-pip install git+https://github.com/OpenQuantumDesign/midstack.git
+pip install git+https://github.com/OpenQuantumDesign/oqd-core.git
 ```
 
 Or clone the repository locally and install with:
 
 ```bash
-git clone https://github.com/OpenQuantumDesign/midstack
+git clone https://github.com/OpenQuantumDesign/oqd-core
 pip install .
 ```
 
@@ -167,7 +167,7 @@ Planned supported hardware backends include:
 
 ## Documentation <a name="documentation"></a>
 
-Documentation is implemented with [MkDocs](https://www.mkdocs.org/) and can be read from the [docs](https://github.com/OpenQuantumDesign/midstack/tree/main/docs) folder.
+Documentation is implemented with [MkDocs](https://www.mkdocs.org/) and can be read from the [docs](https://github.com/OpenQuantumDesign/oqd-core/tree/main/docs) folder.
 
 To install the dependencies for documentation, run:
 

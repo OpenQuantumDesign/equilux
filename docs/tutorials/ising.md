@@ -19,42 +19,38 @@ We will go through this step by step. First we get the necessary imports:
 /// details | Imports
 
 ```py
-from rich import print as pprint
-
 import numpy as np
 
-from oqd_core.interface.analog.operator import *
-from oqd_core.interface.analog.operations import *
+from oqd_core.interface.analog.operator import PauliI, PauliX, PauliZ, PauliY
+from oqd_core.interface.analog.operation import *
 from oqd_core.backend.metric import *
 from oqd_core.backend.task import Task
-from oqd_analog_emulator.base import TaskArgsAnalogSimulator
-from oqd_core.backend import QutipBackend
-
-from examples.emulation.utils import plot_metrics_counts
+from oqd_analog_emulator.qutip_backend import QutipBackend
 ```
 
 ///
 
-Then we define the [`AnalogGate`][midstack.interface.analog.operations.AnalogGate] object
+Then we build a [`AnalogGate`][oqd_core.interface.analog.operations.AnalogGate] object:
 
 ```py
 """For simplicity we initialize some Operators"""
 X, Z, I = PauliX(), PauliZ(), PauliI()
 
-H = AnalogGate(
+gate = AnalogGate(
     hamiltonian= (X @ X) + (Z @ I) + (I @ Z),
-    dissipation=Dissipation(),
 )
 ```
 
-Then we define the [`AnalogCircuit`][midstack.interface.analog.operations.AnalogCircuit] object and evolve it according to the hamiltonian defined above
+Then we define the [`AnalogCircuit`][oqd_core.interface.analog.operations.AnalogCircuit] object and evolve it according to the hamiltonian defined above
 
 ```py
 circuit = AnalogCircuit()
-circuit.evolve(duration = 5, gate = H)
+circuit.evolve(duration=5, gate=gate)
 ```
 
-For QuTip simulation we need to define the arguements which contain the number of shots and the metrics we want to evaluate.
+For analog emulation, we first define the arguments to pass to the classical emulation, 
+including the number of shots and metrics (e.g., expectation values, entropy of entanglement) which we want to track 
+through the time evolution.
 
 ```py
 args = TaskArgsAnalog(
@@ -67,41 +63,17 @@ args = TaskArgsAnalog(
 )
 ```
 
-We can then wrap the [`AnalogCircuit`][midstack.interface.analog.operations.AnalogCircuit] and the args to a [`Task`][midstack.backend.task.Task] object and run using the QuTip backend. Note that there are 2 ways to run and the 2 ways are explained.
+We then wrap the [`AnalogCircuit`][oqd_core.interface.analog.operations.AnalogCircuit] and the arguments to a [`Task`][oqd_core.backend.task.Task] object and run using the QuTip backend. 
 
 ## Running the simulation
 
-First initialize the [`QutipBackend`][midstack.backend.qutip.base.QutipBackend] object.
+First initialize the [`QutipBackend`][oqd_analog_emulator.qutip_backend.QutipBackend] object.
 === "Compile & Simulate"
-The [`Task`][midstack.backend.task.Task] can be compiled first to a [`QutipExperiment`][midstack.backend.qutip.interface.QutipExperiment] object and then this [`QutipExperiment`][midstack.backend.qutip.interface.QutipExperiment] object can be run. This is to allow you to see what parameters are used to specify the particular QuTip experiment.
+The [`Task`][oqd_core.backend.task.Task] is compiled to a [`QutipExperiment`][oqd_analog_emulator.qutip_backend.QutipExperiment] 
+object and then this [`QutipExperiment`][oqd_core.backend.qutip.interface.QutipExperiment], composed of `qt.QObj` objects. 
+This is to allow you to see what parameters are used to specify the particular QuTip experiment.
 
-    ``` py
-    backend = QutipBackend()
-    experiment = backend.compile(task = task)
-    results = backend.run(experiment = experiment)
-    ```
-
-=== "Directly Simulate"
-The [`Task`][midstack.backend.task.Task] object can be directly simulated by the `run()` method.
-
-    ``` py
-    backend = QutipBackend()
-    results = backend.run(task = task)
-    ```
-
-## Results
-
-Finally we can plot the metrics and relevant statistics from the final quantum state:
-
-```py
-plot_metrics_counts(
-    results = results,
-    experiment_name = "tfim_2_site.png",
-)
+``` py
+backend = QutipBackend()
+results = backend.run(task = task)
 ```
-
-The generated image is like:
-
-<!-- ![Two Site TFIM](img/plots/tfim_2_site.png)  -->
-
-![Entropy of entanglement](../img/plots/tfim_2_site.png)
