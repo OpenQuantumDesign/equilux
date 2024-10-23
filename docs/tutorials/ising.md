@@ -63,14 +63,14 @@ args = TaskArgsAnalog(
 )
 ```
 
-We then wrap the [`AnalogCircuit`][oqd_core.interface.analog.operations.AnalogCircuit] and the arguments to a [`Task`][oqd_core.backend.task.Task] object and run using the QuTip backend. 
+We then wrap the [`AnalogCircuit`][oqd_core.interface.analog.operation.AnalogCircuit] and the arguments 
+to a [`Task`][oqd_core.backend.task.Task] object and run using the classical backend. 
 
 ## Running the simulation
 
 First initialize the [`QutipBackend`][oqd_analog_emulator.qutip_backend.QutipBackend] object.
-=== "Compile & Simulate"
-The [`Task`][oqd_core.backend.task.Task] is compiled to a [`QutipExperiment`][oqd_analog_emulator.qutip_backend.QutipExperiment] 
-object and then this [`QutipExperiment`][oqd_core.backend.qutip.interface.QutipExperiment], composed of `qt.QObj` objects. 
+The [`Task`][oqd_core.backend.task.Task] is compiled to a [`QutipExperiment`][oqd_analog_emulator.interface.QutipExperiment] 
+object, which composed of `qutip.QObj` objects. 
 This is to allow you to see what parameters are used to specify the particular QuTip experiment.
 
 ``` py
