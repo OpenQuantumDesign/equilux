@@ -1,12 +1,12 @@
 
 
-The Open Quantum Design (OQD) intellectual property (IP) includes a full stack, trapped ion quantum computer, which was developed at the Institute for Quantum Computing and Perimeter Institute’s Quantum Intelligence Lab. 
+Open Quantum Design (OQD) is a non-profit organization. It's mission is to develop full-stack open-source quantum computer designs by fostering a collaborative community of diverse contributors from academia, industry, and government. 
+OQD's current designs are based on laser-cooled trapped ion quantum computing hardware and software. 
+The OQD intellectual property was developed by University of Waterloo Professors Crystal Senko, Rajibul Islam and Roger Melko, with physicists, engineers, and computer scientists working at the [Institute for Quantum Computing](https://uwaterloo.ca/institute-for-quantum-computing/) and the [Perimeter Institute Quantum Intelligence Lab](https://perimeterinstitute.ca/perimeter-institute-quantum-intelligence-lab-piquil).
 
+OQD’s technology features novel and scalable approaches for the trapping, control, and read-out of ions. This includes a unique blade trap design, agile optical scheme for low crosstalk addressing of the ions, high-fidelity and all-to-all gate connectivity, and native support for mid-circuit measurements.
 
-OQD’s technology features novel and scalable approaches for the trapping, control, and read-out of ions. This includes a unique blade trap design,  agile optical scheme  for low crosstalk addressing the ions, high-fidelity and all-to-all gate connectivity, and native support for mid-circuit measurements.
-
-
-All components of the stack will be open under an Apache 2.0 license (or similar) - from hardware designs and the middleware control stack, to the top level programming interfaces. OQD’s vision is to build a collaborative community for technology co-creation, in order to democratize and accelerate the benefits of quantum computing technologies for all.  
+All components of the stack will be open under an Apache 2.0 or similar license - from hardware designs and the middleware control stack, to the top level programming interfaces. OQD’s vision is to build a collaborative community for technology co-creation, in order to democratize and accelerate the benefits of quantum computing technologies for all.  
 
 ## Why Open?
 
