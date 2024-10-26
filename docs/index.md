@@ -18,8 +18,9 @@ This documentation is still under development, please feel to contribute! © Ope
 ///
 
 ## What's here
-Open Quantum Design is a non-profit foundation to build full-stack, open-source quantum computing designs.
-This documentation includes the software components of the OQD stack, including the core programming interfaces,
+Open Quantum Design is a non-profit foundation supporting the development of full-stack, open-source quantum computers.
+OQD's current designs are based on laser-cooled trapped ion quantum computing hardware, including real-time control, backend and frontend software.
+This documentation covers the software components of the OQD stack, including the core programming interfaces,
 classical emulation backends, compiler infrastructure, and cloud server containers.
 
 ## The stack
