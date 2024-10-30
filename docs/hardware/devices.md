@@ -1,4 +1,3 @@
-## Open Quantum Design: Hardware
 
 ### Bloodstone
 * Ion species: <sup>171</sup>Yb<sup>+</sup>
@@ -7,7 +6,8 @@
 * SPAM individual addressing: DMD
 * Coherent individual addressing with: Double-pass AOM + AOD
 
-![Bloodstone - Vacuum Chamber & Trap](./img/bloodstone-trap.png)
+![Bloodstone - Vacuum Chamber & Trap 1](./img/bloodstone-trap1.png){: style="width:300px"}
+![Bloodstone - Vacuum Chamber & Trap 2](./img/bloodstone-trap2.png){: style="width:300px"}
 
 ### Beryl
 * Ion species: <sup>133</sup>Ba<sup>+</sup>, <sup>137</sup>Ba<sup>+</sup>, <sup>138</sup>Ba<sup>+</sup>
@@ -16,7 +16,7 @@
 * SPAM individual addressing: AOMs
 * Coherent individual addressing: Laser written waveguide + AOMs
 
-![Beryl - Vacuum Chamber & Trap](./img/beryl-trap.png)
+![Beryl - Vacuum Chamber & Trap](./img/beryl-trap.png){: style="width:600px"}
 
 ## Real-time Control System
 The OQD stack builds on the [Sinara](https://m-labs.hk/experiment-control/sinara-core/) and [ARTIQ](https://m-labs.hk/artiq/) ecosystems for real-time control.

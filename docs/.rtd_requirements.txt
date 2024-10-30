@@ -1,0 +1,8 @@
+pymdown-extensions
+mkdocstrings
+mkdocs-material
+mkdocstrings-python
+mdx_truly_sane_list
+jupyter
+jupyter_contrib_nbextensions
+mkdocs-jupyter
