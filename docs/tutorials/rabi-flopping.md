@@ -1,14 +1,15 @@
 # Single qubit Rabi flopping
 
-Let's implement the single qubit Rabi Flopping,
-
+First, let's implement a single-qubit Rabi flopping experiment. 
+Here, a two-level system, initialized in the $\ket{0}$ basis state, oscillates between $\ket{0}$ and $\ket{1}$ during evolution.
+The Hamiltonian under which the state evolves is,
 $$
 H = -\frac{\pi}{4}\sigma^x
 $$
 
-## Implementation
+### Building the quantum program
 
-We will go through this step by step. First we get the necessary imports:
+We will go through how to specify this quantum program using OQD's analog interface. First import the relevant modules,
 /// details | Imports
 
 ```py
@@ -23,28 +24,31 @@ from oqd_analog_emulator.qutip_backend import QutipBackend
 
 ///
 
-Then we define the [`AnalogGate`][oqd_core.interface.analog.operations.AnalogGate] object
-
+Then we construct an [`AnalogGate`][oqd_core.interface.analog.operations.AnalogGate] object,
 ```py
-"""For simplicity, we initialize the X Operator"""
 X = PauliX()
-
 gate = AnalogGate(hamiltonian= -(np.pi / 4) * X)
 ```
 
-Then we define the [`AnalogCircuit`][oqd_core.interface.analog.operations.AnalogCircuit] object and evolve it according to the Hamiltonian defined above
-
+The [`AnalogCircuit`][oqd_core.interface.analog.operations.AnalogCircuit] represents a sequence of Hamiltonians 
+which the quantum system evolves under for a fixed duration. Let's construct a circuit and add the gate from above and 
+then measure,
 ```py
-ac = AnalogCircuit()
-ac.evolve(duration=3, gate=gate)
+circuit = AnalogCircuit()
+circuit.evolve(duration=3, gate=gate)
+circuit.measure()
 ```
 
-For QuTip simulation we need to define the arguements which contain the number of shots and the metrics we want to evaluate.
-
+### Setting up the backend
+Now, let's emulate the time dynamics of our quantum system. We use one of the provided backends, 
+here the [`QutipBackend`][oqd_analog_emulator.qutip_backend.QutipBackend], to solve the evolution of the quantum state
+through the circuit. We first initialize the backend and a [`TaskArgsAnalog`][oqd_core.backend.task.TaskArgsAnalog] 
+object with the settings for the emulation, such as the number of shots, 
+the metrics to track through the evolution (e.g., an expectation value), and the time step.
 ```py
+backend = QutipBackend()
 args = TaskArgsAnalog(
     n_shots=100,
-    fock_cutoff=4,
     metrics={
         "Z": Expectation(operator=Z),
     },
@@ -53,12 +57,9 @@ args = TaskArgsAnalog(
 ```
 
 
-## Running the simulation
-
-First initialize the [`QutipBackend`][oqd_analog_emulator.qutip_backend.QutipBackend] object.
-
-
+### Running the backend emulation
+Now, we simply use the `.run()` method of the backend to run the emulation of the time dynamics of the circuit.
 ``` py
-backend = QutipBackend()
 results = backend.run(task = task)
 ```
+

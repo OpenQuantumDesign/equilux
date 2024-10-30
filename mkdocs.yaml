@@ -24,6 +24,7 @@ nav:
 
   - Tutorials:
       - Analog:
+        - Analog Tutorials: tutorials/index.md
         - Rabi Flopping: tutorials/rabi-flopping.md
         - Ising Model: tutorials/ising.md
   - Examples:
