@@ -24,13 +24,13 @@ from oqd_analog_emulator.qutip_backend import QutipBackend
 
 ///
 
-Then we construct an [`AnalogGate`][oqd_core.interface.analog.operations.AnalogGate] object,
+Then we construct an [`AnalogGate`][oqd_core.interface.analog.operation.AnalogGate] object,
 ```py
 X = PauliX()
 gate = AnalogGate(hamiltonian= -(np.pi / 4) * X)
 ```
 
-The [`AnalogCircuit`][oqd_core.interface.analog.operations.AnalogCircuit] represents a sequence of Hamiltonians 
+The [`AnalogCircuit`][oqd_core.interface.analog.operation.AnalogCircuit] represents a sequence of Hamiltonians 
 which the quantum system evolves under for a fixed duration. Let's construct a circuit and add the gate from above and 
 then measure,
 ```py

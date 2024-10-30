@@ -1,13 +1,13 @@
 ## Installation 
 To install, 
 ```bash
-pip install git+https://github.com/OpenQuantumDesign/quarry.git
+pip install git+https://github.com/OpenQuantumDesign/equilux.git
 ```
 
 Or clone the repository locally and install with:
 
 ```bash
-git clone https://github.com/OpenQuantumDesign/quarry
+git clone https://github.com/OpenQuantumDesign/equilux
 pip install .
 ```
 
