@@ -1,8 +1,8 @@
 site_name: "Open Quantum Design"
 site_description: Open Quantum Design - the world's first open-source quantum computer
 
-repo_name: OpenQuantumDesign/quarry
-repo_url: https://github.com/OpenQuantumDesign/quarry.git
+repo_name: OpenQuantumDesign/equilux
+repo_url: https://github.com/OpenQuantumDesign/equilux.git
 
 copyright: Copyright &copy; 2024 Open Quantum Design
 
@@ -30,11 +30,11 @@ nav:
   - Examples:
       - Analog:
           - Rabi Flopping: examples/one_qubit_rabi_flopping.ipynb
+          - Bell state preparation: examples/bell_state.ipynb
+          - GHZ state preparation: examples/ghz_state.ipynb
           - Adiabatic state:
               - Linear time-dependence: examples/adiabatic_linear.ipynb
               - Sigmoid time-dependence: examples/adiabatic_sigmoid.ipynb
-          - Bell state preparation: examples/bell_state.ipynb
-          - GHZ state preparation: examples/ghz_state.ipynb
           - Ising model: examples/ising_model.ipynb
           - QAOA: examples/qaoa.ipynb
 
@@ -45,9 +45,8 @@ nav:
   - Cloud: '!include ./oqd-cloud/mkdocs.yaml'
   - Compiler Infrastructure: '!include ./oqd-compiler-infrastructure/mkdocs.yaml'
   - Hardware:
-      - About OQD Hardware: hardware/about-oqd.md
       - Open Hardware Devices: hardware/devices.md
-
+      - About OQD Hardware: hardware/about-oqd.md
   - About: about.md
 
 theme:
@@ -137,6 +136,7 @@ markdown_extensions:
   # for notes/admonitions
   - pymdownx.blocks.admonition
   - pymdownx.blocks.details
+  - pymdownx.blocks.html
   - pymdownx.blocks.tab:
       alternate_style: true
 
