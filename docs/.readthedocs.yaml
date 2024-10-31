@@ -19,4 +19,4 @@ mkdocs:
 # Optionally declare the Python requirements required to build your docs
 python:
   install:
-  - requirements: docs/.rtd_requirements.txt
+  - requirements: ./docs/.rtd_requirements.txt
