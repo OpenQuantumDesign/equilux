@@ -17,5 +17,6 @@ jobs:
         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
           CUSTOM_DOMAIN: docs.openquantumdesign.com
+          CONFIG_FILE: ./mkdocs.yaml
 #          EXTRA_PACKAGES: build-base
           REQUIREMENTS: docs/requirements_docs.txt
