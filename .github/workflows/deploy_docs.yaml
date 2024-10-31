@@ -12,10 +12,8 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v2
 
-      - name: Git Submodule Update
-        run: |
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
+      - name: Git Submodule Initialization
+        run: git submodule update --init --recursive
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
