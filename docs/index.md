@@ -8,7 +8,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10_|_3.11_|_3.12-blue)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-[![GitHub Workflow Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/ki3-qbt/graph-compiler/actions)
 
 <!-- prettier-ignore -->
 /// admonition | Note
