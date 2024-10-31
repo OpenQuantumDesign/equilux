@@ -6,4 +6,4 @@ mdx_truly_sane_lists
 jupyter
 jupyter_contrib_nbextensions
 mkdocs-jupyter
-monorepo
+mkdocs-monorepo-plugin
