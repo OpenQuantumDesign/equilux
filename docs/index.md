@@ -96,14 +96,14 @@ block-beta
    RTGateware --> RTHardware
    RTHardware --> RTApparatus
    
-   classDef title fill:#d6d4d4,stroke:#333;
-   classDef digital fill:#E7E08B,stroke:#333;
-   classDef analog fill:#E4E9B2,stroke:#333;
-   classDef atomic fill:#D2E4C4,stroke:#333;
-   classDef realtime fill:#B5CBB7,stroke:#333;
+    classDef title fill:#d6d4d4,stroke:#333,color:#333;
+    classDef digital fill:#E7E08B,stroke:#333,color:#333;
+    classDef analog fill:#E4E9B2,stroke:#333,color:#333;
+    classDef atomic fill:#D2E4C4,stroke:#333,color:#333;
+    classDef realtime fill:#B5CBB7,stroke:#333,color:#333;
 
-    classDef highlight fill:#f2bbbb,stroke:#333,stroke-dasharray: 5 5;
-
+    classDef highlight fill:#f2bbbb,stroke:#333,color:#333,stroke-dasharray: 5 5;
+    
     class InterfaceTitle,IRTitle,EmulatorsTitle,RealTimeTitle title
     class InterfaceDigital,IRDigital,EmulatorDigital digital
     class InterfaceAnalog,IRAnalog,EmulatorAnalog analog
