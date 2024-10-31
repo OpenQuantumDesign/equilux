@@ -20,9 +20,11 @@ classical emulation backends, compiler infrastructure, and cloud server containe
 - [Quick Start](#quickstart) <br/>
 - [Installation](#installation) <br/>
 - [The Stack](#stack) <br/>
+- [Software](#software) <br/>
+- [Hardware](#hardware) <br/>
 - [Documentation](#documentation) <br/>
 
-## Quick start
+## Quick start <a name="quickstart"></a>
 
 ## Installation <a name="installation"></a>
 To install `equilux` and the suite Open Quantum Design software tools,  
@@ -36,7 +38,7 @@ git clone https://github.com/OpenQuantumDesign/equilux
 pip install .
 ```
 
-## The stack
+## The stack <a name="stack"></a>
 
 
 Open Quantum Design's quantum computing stack can be interfaced at different levels, including the digital, analog, and atomic layers.
@@ -172,4 +174,4 @@ results = backend.run(task=task)
 ```
 
 ## Documentation <a name="documentation"></a>
-Documentation can be found at [docs.openquantumdesign.org](docs.openquantumdesign.org).
+Documentation can be found at [docs.openquantumdesign.org](https://docs.openquantumdesign.org/en/latest/).
