@@ -39,10 +39,11 @@ docs = [
     "mkdocs-material",
     "mkdocstrings-python",
     "mdx_truly_sane_lists",
-    "jupyter",
-    "jupyter_contrib_nbextensions",
-    "mkdocs-jupyter",
-    "mkdocs-monorepo-plugin"
+    "jupyter==1.1.1",
+    "jupyter_contrib_nbextensions==0.7.0",
+    "mkdocs-jupyter==0.25.0",
+    "mkdocs-monorepo-plugin",
+    "notebook==6.4.12"
 ]
 test = ["unittest_prettify"]
 
