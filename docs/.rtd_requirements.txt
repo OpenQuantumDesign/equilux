@@ -3,7 +3,8 @@ mkdocstrings
 mkdocs-material
 mkdocstrings-python
 mdx_truly_sane_lists
-jupyter
+notebook==6.4.12
+jupyter==1.1.1
 jupyter_contrib_nbextensions
 mkdocs-jupyter
 mkdocs-monorepo-plugin
