@@ -42,6 +42,7 @@ docs = [
     "jupyter",
     "jupyter_contrib_nbextensions",
     "mkdocs-jupyter",
+    "mkdocs-monorepo-plugin"
 ]
 test = ["unittest_prettify"]
 
