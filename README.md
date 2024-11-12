@@ -1,11 +1,15 @@
-# ![Open Quantum Design](docs/img/oqd-logo-text.png)
+# ![Open Quantum Design](https://raw.githubusercontent.com/OpenQuantumDesign/oqd-compiler-infrastructure/main/docs/img/oqd-logo-text.png)
 
 <h2 align="center">
     Program the world's first open-source, full-stack quantum computer.
 </h2>
 
+[![doc](https://img.shields.io/badge/documentation-lightblue)](https://docs.openquantumdesign.org/)
+[![PyPI Version](https://img.shields.io/pypi/v/equilux)](https://pypi.org/project/equilux)
+[![ci](https://github.com/OpenQuantumDesign/equilux/actions/workflows/deploy_docs.yaml/badge.svg)](https://github.com/OpenQuantumDesign/equilux/actions/workflows/deploy_docs.yaml)
 ![versions](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## About
 Open Quantum Design (OQD) is a non-profit foundation supporting the development of full-stack, open-source quantum computers.
