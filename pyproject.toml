@@ -5,10 +5,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "equilux"
-version = "0.0.0"
+version = "0.1.0"
 requires-python = ">=3.10"
 readme = "README.md"
-license = {file = "LICENSE"}
+license = {text = "Apache 2.0"}
 keywords = ["quantum", "computing", "analog", "digitial", "atomic", "simulation", "full-stack"]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -29,7 +29,11 @@ classifiers = [
 
 dependencies = [
     "matplotlib",
-    "seaborn"
+    "seaborn",
+    "oqd-compiler-infrastructure",
+    "oqd-core",
+    "oqd-analog-emulator",
+    "oqd-cloud"
 ]
 
 [project.optional-dependencies]
@@ -43,7 +47,7 @@ docs = [
     "jupyter_contrib_nbextensions==0.7.0",
     "mkdocs-jupyter==0.25.0",
     "mkdocs-monorepo-plugin",
-    "notebook==6.4.12"
+    "notebook==6.4.12",
 ]
 test = ["unittest_prettify"]
 
