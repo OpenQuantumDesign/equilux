@@ -1,4 +1,4 @@
-# ![Open Quantum Design](https://raw.githubusercontent.com/OpenQuantumDesign/oqd-compiler-infrastructure/main/docs/img/oqd-logo-text.png)
+# ![Open Quantum Design](docs/img/logo-equilux-blackmedium.png)
 
 <h2 align="center">
     Program the world's first open-source, full-stack quantum computer.
