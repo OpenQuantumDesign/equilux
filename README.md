@@ -95,7 +95,7 @@ block-beta
        space
        RTHardware["Lasers, Modulators, Photodetection, Ion Trap"]
        space
-       RTApparatus["Trapped-Ion QPU (<sup>171</sup>Yt<sup>+</sup>, <sup>133</sup>Ba<sup>+</sup>)"]
+       RTApparatus["Trapped-Ion QPU (<sup>171</sup>Yb<sup>+</sup>, <sup>133</sup>Ba<sup>+</sup>)"]
        space
     end
     space
