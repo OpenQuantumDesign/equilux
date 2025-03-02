@@ -1,33 +1,37 @@
-name: ci
+name: Deploy Mkdocs Documentation
+
 on:
   push:
-    branches:
-      - master
-      - main
+    branches: ["main"]
+
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  deploy_docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: git submodule update --init --recursive
-      - run: git submodule update --recursive --remote
-      - run: cp -r examples/ docs/examples/
-      - run: pip install .[docs]
-      - run: mkdocs gh-deploy --force
+          enable-cache: true
+
+      - name: Retrieve Git submodules
+        run: git submodule update --init --recursive && git submodule update --recursive --remote
+
+      - name: Copy examples into docs folder
+        run: cp -r examples/ docs/examples/
+
+      - name: Install repo
+        run: uv sync --extra docs
+
+      - name: Build docs
+        run: uv run mkdocs gh-deploy --force
