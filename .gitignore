@@ -177,3 +177,4 @@ _scripts/
 docs/examples/
 tests/test.bat
 *.zip
+.pre-commit-config.yaml

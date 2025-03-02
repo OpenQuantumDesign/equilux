@@ -65,6 +65,8 @@ Repository = "https://github.com/OpenQuantumDesign/equilux.git"
 Issues = "https://github.com/OpenQuantumDesign/equilux/issues"
 
 [dependency-groups]
-dev = [
-    "pre-commit>=4.1.0",
-]
+dev = ["pre-commit>=4.1.0"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+fixable = ["ALL"]
