@@ -6,10 +6,18 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "equilux"
 version = "0.1.0"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
 readme = "README.md"
-license = {text = "Apache 2.0"}
-keywords = ["quantum", "computing", "analog", "digitial", "atomic", "simulation", "full-stack"]
+license = { text = "Apache 2.0" }
+keywords = [
+  "quantum",
+  "computing",
+  "analog",
+  "digitial",
+  "atomic",
+  "simulation",
+  "full-stack",
+]
 classifiers = [
   "Development Status :: 3 - Alpha",
 
@@ -28,35 +36,35 @@ classifiers = [
 
 
 dependencies = [
-    "matplotlib",
-    "seaborn",
-    "oqd-compiler-infrastructure",
-    "oqd-core",
-    "oqd-analog-emulator",
-    "oqd-cloud"
+  "matplotlib",
+  "seaborn",
+  "oqd-compiler-infrastructure",
+  "oqd-core",
+  "oqd-analog-emulator",
+  "oqd-cloud",
 ]
 
 [project.optional-dependencies]
 docs = [
-    "pymdown-extensions",
-    "mkdocstrings",
-    "mkdocs-material",
-    "mkdocstrings-python",
-    "mdx_truly_sane_lists",
-    "jupyter==1.1.1",
-    "jupyter_contrib_nbextensions==0.7.0",
-    "mkdocs-jupyter==0.25.0",
-    "mkdocs-monorepo-plugin",
-    "notebook==6.4.12",
+  "pymdown-extensions",
+  "mkdocstrings",
+  "mkdocs-material",
+  "mkdocstrings-python",
+  "mdx_truly_sane_lists",
+  "jupyter==1.1.1",
+  "jupyter_contrib_nbextensions==0.7.0",
+  "mkdocs-jupyter==0.25.0",
+  "mkdocs-monorepo-plugin",
+  "notebook==6.4.12",
 ]
-test = ["unittest_prettify"]
-
-#[tool.setuptools.packages.find]
-#where = ["."]
-#include = ["oqd-*"]
 
 [project.urls]
 Homepage = "https://github.com/OpenQuantumDesign/equilux"
 Documentation = "https://docs.openquantumdesign.org"
 Repository = "https://github.com/OpenQuantumDesign/equilux.git"
 Issues = "https://github.com/OpenQuantumDesign/equilux/issues"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+]
