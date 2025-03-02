@@ -1,0 +1,37 @@
+name: Check Mkdocs Build
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  check_mkdocs_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Configure Git credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Retrieve Git submodules
+        run: git submodule update --init --recursive && git submodule update --recursive --remote
+
+      - name: Copy examples into docs folder
+        run: cp -r examples/ docs/examples/
+
+      - name: Install repo
+        run: uv sync --extra docs
+
+      - name: Build docs
+        run: uv run mkdocs build
