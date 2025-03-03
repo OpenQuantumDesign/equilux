@@ -1,4 +1,4 @@
-# Transverse field Ising model 
+# Transverse field Ising model
 
 Next, let's implement everyone's favourite many-body Hamiltonian -- the transverse-field Ising model.
 The Hamiltonian is of the form,
@@ -67,8 +67,8 @@ circuit.measure()
 
 
 ### Setting up and running the classical emulation
-Similarly, we set up the settings for the classical emulation backend, 
-including the number of shots and metrics (e.g., expectation values, entropy of entanglement) 
+Similarly, we set up the settings for the classical emulation backend,
+including the number of shots and metrics (e.g., expectation values, entropy of entanglement)
 which we want to track through the time evolution.
 
 ```py

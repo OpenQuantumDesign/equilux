@@ -1,20 +1,20 @@
-name: Deploy Mkdocs Documentation
+name: Check Mkdocs Build
 
 on:
-  push:
+  pull_request:
     branches: ["main"]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy_docs:
+  check_mkdocs_build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Configure Git Credentials
+      - name: Configure Git credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
@@ -34,4 +34,4 @@ jobs:
         run: uv sync --extra docs
 
       - name: Build docs
-        run: uv run mkdocs gh-deploy --force
+        run: uv run mkdocs build

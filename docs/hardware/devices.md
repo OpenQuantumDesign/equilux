@@ -16,9 +16,9 @@ This documentation is still under development, we welcome contributions! © Open
 
 ## What's Here
 The heart of Open Quantum Design's mission and vision is to build open-source, full-stack
-quantum computers. The second generation of trapped-ion devices, coined [Bloodstone](#bloodstone) and [Beryl](#beryl), 
+quantum computers. The second generation of trapped-ion devices, coined [Bloodstone](#bloodstone) and [Beryl](#beryl),
 are currently under construction and testing. Designs, including electrical, photonic, and mechanical,
-will be opened sourced for community use and contribution. 
+will be opened sourced for community use and contribution.
 The real-time control stack builds on top of the open-hardware [Sinara](#sinara) ecosystem,
 including [ARTIQ](#artiq) and [DAX](#dax)
 
@@ -26,47 +26,47 @@ including [ARTIQ](#artiq) and [DAX](#dax)
 ```mermaid
 block-beta
    columns 3
-   
+
    block:Interface
        columns 1
        InterfaceTitle("<i><b>Interfaces</b><i/>")
-       InterfaceDigital["<b>Digital Interface</b>\nQuantum circuits with discrete gates"] 
+       InterfaceDigital["<b>Digital Interface</b>\nQuantum circuits with discrete gates"]
        space
-       InterfaceAnalog["<b>Analog Interface</b>\n Continuous-time evolution with Hamiltonians"] 
+       InterfaceAnalog["<b>Analog Interface</b>\n Continuous-time evolution with Hamiltonians"]
        space
        InterfaceAtomic["<b>Atomic Interface</b>\nLight-matter interactions between lasers and ions"]
        space
     end
-    
+
     block:IR
        columns 1
        IRTitle("<i><b>IRs</b><i/>")
-       IRDigital["Quantum circuit IR\nopenQASM, LLVM+QIR"] 
+       IRDigital["Quantum circuit IR\nopenQASM, LLVM+QIR"]
        space
        IRAnalog["openQSIM"]
        space
        IRAtomic["openAPL"]
        space
     end
-    
+
     block:Emulator
        columns 1
        EmulatorsTitle("<i><b>Classical Emulators</b><i/>")
-       
-       EmulatorDigital["Pennylane, Qiskit"] 
+
+       EmulatorDigital["Pennylane, Qiskit"]
        space
        EmulatorAnalog["QuTiP, QuantumOptics.jl"]
        space
        EmulatorAtomic["TrICal, QuantumIon.jl"]
        space
     end
-    
+
     space
     block:RealTime
        columns 1
        RealTimeTitle("<i><b>Real-Time</b><i/>")
        space
-       RTSoftware["ARTIQ, DAX, OQDAX"] 
+       RTSoftware["ARTIQ, DAX, OQDAX"]
        space
        RTGateware["Sinara Real-Time Control"]
        space
@@ -76,24 +76,24 @@ block-beta
        space
     end
     space
-    
+
    InterfaceDigital --> IRDigital
    InterfaceAnalog --> IRAnalog
    InterfaceAtomic --> IRAtomic
-   
+
    IRDigital --> IRAnalog
    IRAnalog --> IRAtomic
-   
+
    IRDigital --> EmulatorDigital
    IRAnalog --> EmulatorAnalog
    IRAtomic --> EmulatorAtomic
-   
+
    IRAtomic --> RealTimeTitle
-   
+
    RTSoftware --> RTGateware
    RTGateware --> RTHardware
    RTHardware --> RTApparatus
-   
+
    classDef title fill:#d6d4d4,stroke:#333,color:#333;
    classDef digital fill:#E7E08B,stroke:#333,color:#333;
    classDef analog fill:#E4E9B2,stroke:#333,color:#333;
@@ -107,7 +107,7 @@ block-beta
     class InterfaceAnalog,IRAnalog,EmulatorAnalog analog
     class InterfaceAtomic,IRAtomic,EmulatorAtomic atomic
     class RTSoftware,RTGateware,RTHardware,RTApparatus realtime
-    
+
     class RealTime highlight
 ```
 

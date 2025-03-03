@@ -24,9 +24,9 @@ nav:
 
   - Tutorials:
       - Analog:
-        - Analog Tutorials: tutorials/index.md
-        - Rabi Flopping: tutorials/rabi-flopping.md
-        - Ising Model: tutorials/ising.md
+          - Analog Tutorials: tutorials/index.md
+          - Rabi Flopping: tutorials/rabi-flopping.md
+          - Ising Model: tutorials/ising.md
   - Examples:
       - Analog:
           - Rabi Flopping: examples/one_qubit_rabi_flopping.ipynb
@@ -38,12 +38,12 @@ nav:
           - Ising model: examples/ising_model.ipynb
           - QAOA: examples/qaoa.ipynb
 
-  - Core: '!include ./oqd-core/mkdocs.yaml'
+  - Core: "!include ./oqd-core/mkdocs.yaml"
   - Emulators:
-      - Analog Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
-#      - Atomic Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
-  - Cloud: '!include ./oqd-cloud/mkdocs.yaml'
-  - Compiler Infrastructure: '!include ./oqd-compiler-infrastructure/mkdocs.yaml'
+      - Analog Emulators: "!include ./oqd-analog-emulator/mkdocs.yaml"
+  #      - Atomic Emulators: '!include ./oqd-analog-emulator/mkdocs.yaml'
+  - Cloud: "!include ./oqd-cloud/mkdocs.yaml"
+  - Compiler Infrastructure: "!include ./oqd-compiler-infrastructure/mkdocs.yaml"
   - Hardware:
       - Open Hardware Devices: hardware/devices.md
       - About OQD Hardware: hardware/about-oqd.md
@@ -88,6 +88,7 @@ theme:
 
 plugins:
   - monorepo:
+  - search
   - mkdocstrings:
       handlers:
         python:
