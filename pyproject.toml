@@ -38,10 +38,10 @@ classifiers = [
 dependencies = [
   "matplotlib",
   "seaborn",
-  "oqd-compiler-infrastructure",
-  "oqd-core",
-  "oqd-analog-emulator",
-  "oqd-cloud",
+  "oqd-compiler-infrastructure@git+https://github.com/openquantumdesign/oqd-compiler-infrastructure",
+  "oqd-core @ git+https://github.com/openquantumdesign/oqd-core",
+  "oqd-analog-emulator @ git+https://github.com/openquantumdesign/oqd-analog-emulator",
+  "oqd-cloud @ git+https://github.com/openquantumdesign/oqd-cloud",
 ]
 
 [project.optional-dependencies]
