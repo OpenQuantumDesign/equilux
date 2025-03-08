@@ -31,7 +31,7 @@ classical emulation backends, compiler infrastructure, and cloud server containe
 ## Quick start <a name="quickstart"></a>
 
 ## Installation <a name="installation"></a>
-To install `equilux` and the suite Open Quantum Design software tools,  
+To install `equilux` and the suite Open Quantum Design software tools,
 ```bash
 pip install equilux
 ```
@@ -49,74 +49,74 @@ Open Quantum Design's quantum computing stack can be interfaced at different lev
 ```mermaid
 block-beta
    columns 3
-   
+
    block:Interface
        columns 1
        InterfaceTitle("<i><b>Interfaces</b><i/>")
-       InterfaceDigital["<b>Digital Interface</b>\nQuantum circuits with discrete gates"] 
+       InterfaceDigital["<b>Digital Interface</b>\nQuantum circuits with discrete gates"]
        space
-       InterfaceAnalog["<b>Analog Interface</b>\n Continuous-time evolution with Hamiltonians"] 
+       InterfaceAnalog["<b>Analog Interface</b>\n Continuous-time evolution with Hamiltonians"]
        space
        InterfaceAtomic["<b>Atomic Interface</b>\nLight-matter interactions between lasers and ions"]
        space
     end
-    
+
     block:IR
        columns 1
        IRTitle("<i><b>IRs</b><i/>")
-       IRDigital["Quantum circuit IR\nopenQASM, LLVM+QIR"] 
+       IRDigital["Quantum circuit IR\nopenQASM, LLVM+QIR"]
        space
        IRAnalog["openQSIM"]
        space
        IRAtomic["openAPL"]
        space
     end
-    
+
     block:Emulator
        columns 1
        EmulatorsTitle("<i><b>Classical Emulators</b><i/>")
-       
-       EmulatorDigital["Pennylane, Qiskit"] 
+
+       EmulatorDigital["Pennylane, Qiskit"]
        space
        EmulatorAnalog["QuTiP, QuantumOptics.jl"]
        space
        EmulatorAtomic["TrICal, QuantumIon.jl"]
        space
     end
-    
+
     space
     block:RealTime
        columns 1
        RealTimeTitle("<i><b>Real-Time</b><i/>")
        space
-       RTSoftware["ARTIQ, DAX, OQDAX"] 
+       RTSoftware["ARTIQ, DAX, OQDAX"]
        space
        RTGateware["Sinara Real-Time Control"]
        space
        RTHardware["Lasers, Modulators, Photodetection, Ion Trap"]
        space
-       RTApparatus["Trapped-Ion QPU (<sup>171</sup>Yt<sup>+</sup>, <sup>133</sup>Ba<sup>+</sup>)"]
+       RTApparatus["Trapped-Ion QPU (<sup>171</sup>Yb<sup>+</sup>, <sup>133</sup>Ba<sup>+</sup>)"]
        space
     end
     space
-    
+
    InterfaceDigital --> IRDigital
    InterfaceAnalog --> IRAnalog
    InterfaceAtomic --> IRAtomic
-   
+
    IRDigital --> IRAnalog
    IRAnalog --> IRAtomic
-   
+
    IRDigital --> EmulatorDigital
    IRAnalog --> EmulatorAnalog
    IRAtomic --> EmulatorAtomic
-   
+
    IRAtomic --> RealTimeTitle
-   
+
    RTSoftware --> RTGateware
    RTGateware --> RTHardware
    RTHardware --> RTApparatus
-   
+
     classDef title fill:#d6d4d4,stroke:#333,color:#333;
     classDef digital fill:#E7E08B,stroke:#333,color:#333;
     classDef analog fill:#E4E9B2,stroke:#333,color:#333;
@@ -124,7 +124,7 @@ block-beta
     classDef realtime fill:#B5CBB7,stroke:#333,color:#333;
 
     classDef highlight fill:#f2bbbb,stroke:#333,color:#333,stroke-dasharray: 5 5;
-    
+
     class InterfaceTitle,IRTitle,EmulatorsTitle,RealTimeTitle title
     class InterfaceDigital,IRDigital,EmulatorDigital digital
     class InterfaceAnalog,IRAnalog,EmulatorAnalog analog
@@ -133,19 +133,19 @@ block-beta
 ```
 
 ### Software <a name="software"></a>
-OQD's software stack components include Python interfaces at the digital, analog, and atomic layers, 
-classical emulators, compiler infrastructure, and cloud server components. 
+OQD's software stack components include Python interfaces at the digital, analog, and atomic layers,
+classical emulators, compiler infrastructure, and cloud server components.
 
 ### Hardware <a name="hardware"></a>
 
-Planned supported hardware backends include 
+Planned supported hardware backends include
 the [Bloodstone](docs/hardware/devices.md) processor based on<sup>171</sup>Yb<sup>+</sup> ions
 and the [Beryl](docs/hardware/devices.md) processor based on<sup>133</sup>Ba<sup>+</sup> ions.
 
 
 
 ## Getting started <a name="Getting Started"></a>
-Below is a short example of how to use the analog interface to specify, serialize, 
+Below is a short example of how to use the analog interface to specify, serialize,
 and simulate an analog quantum program - here, a single-qubit Rabi-flopping experiment.
 
 ```python
