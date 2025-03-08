@@ -37,6 +37,7 @@ nav:
               - Sigmoid time-dependence: examples/adiabatic_sigmoid.ipynb
           - Ising model: examples/ising_model.ipynb
           - QAOA: examples/qaoa.ipynb
+          - Quantum scars: examples/quantum_scars.ipynb
 
   - Core: '!include ./oqd-core/mkdocs.yaml'
   - Emulators:
