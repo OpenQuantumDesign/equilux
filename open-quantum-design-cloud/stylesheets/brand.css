@@ -1,0 +1,116 @@
+/* Load custom fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Source+Serif+Pro&display=swap');
+
+/* Base typography */
+body, .md-typeset {
+  font-family: 'Source Serif Pro', serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.md-typeset h1, .md-typeset h2, .md-typeset h3,
+.md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; /* Bold for headings */
+}
+
+/* Subheadings */
+.md-typeset h2, .md-typeset h3 {
+  font-weight: 600; /* SemiBold for subheadings */
+}
+
+/* Light mode overrides */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #FFFFFF;
+  --md-primary-fg-color: #23627D; /* blue accent */
+  --md-accent-fg-color: #23627D;
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #141414;
+  --md-primary-fg-color: #23627D;
+  --md-accent-fg-color: #23627D;
+}
+
+
+
+/* Apply Raleway to all navigation and sidebar elements */
+.md-nav, 
+.md-nav__title, 
+.md-nav__link, 
+.md-header, 
+.md-tabs, 
+.md-sidebar, 
+.md-sidebar__inner,
+.md-nav__item,
+.md-footer,
+.md-footer__inner {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600; /* SemiBold for ToC/nav for clarity */
+}
+
+
+
+
+/* Page heading accent color for light mode */
+[data-md-color-scheme="default"] .md-typeset h1,
+[data-md-color-scheme="default"] .md-typeset h2,
+[data-md-color-scheme="default"] .md-typeset h3,
+[data-md-color-scheme="default"] .md-typeset h4,
+[data-md-color-scheme="default"] .md-typeset h5,
+[data-md-color-scheme="default"] .md-typeset h6 {
+  color: #7B2328; /* Warm yellow/orange for light mode */
+}
+
+/* Page heading accent color for dark mode */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5,
+[data-md-color-scheme="slate"] .md-typeset h6 {
+  /* color: #F19D19; Deep red for dark mode */
+  color: #E45B68; /* Deep red for dark mode */
+}
+
+
+
+
+
+/* Light mode nav/ToC font color */
+[data-md-color-scheme="default"] .md-nav, 
+[data-md-color-scheme="default"] .md-nav__link,
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  /*color: #222; /* Dark gray or your preferred shade */
+  color: #141414;
+}
+
+/* Dark mode nav/ToC font color */
+[data-md-color-scheme="slate"] .md-nav, 
+[data-md-color-scheme="slate"] .md-nav__link,
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  color: #f0f0f0; /* Light gray or white */
+}
+
+
+
+/* Top navigation bar text and icons should be light-colored */
+.md-header,
+.md-header .md-header__title,
+.md-header .md-header__button,
+.md-header .md-tabs,
+.md-header .md-tabs__link,
+.md-header .md-header__topic,
+.md-header .md-header__option {
+  color: #f0f0f0 !important;  /* Light gray or white text */
+  fill: #f0f0f0 !important;   /* Icons (SVG) */
+}
+
+/* Hover state for links in header */
+.md-header .md-tabs__link:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
