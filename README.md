@@ -1,4 +1,7 @@
-# ![Open Quantum Design](docs/img/logo-equilux-blackmedium.png)
+<p align="center">
+    <img src="docs/img/oqd-logo-black.png" alt="OQD" width="400"/>
+</p>
+
 
 <h2 align="center">
     Program the world's first open-source, full-stack quantum computer.
@@ -12,12 +15,18 @@
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## About
+<!-- <p align="center">
+    <img src="docs/img/logo-equilux-blackmedium.png" alt="Equilux Logo" width="200"/>
+</p> -->
+
 Open Quantum Design (OQD) is a non-profit foundation supporting the development of full-stack, open-source quantum computers.
 OQD's current designs are based on laser-cooled trapped ion quantum computing hardware, including real-time control, backend and frontend software.
 This documentation covers the software components of the OQD stack, including the core programming interfaces,
 classical emulation backends, compiler infrastructure, and cloud server containers.
 
 `equilux` is the top-level package to access the full OQD software suite in a single place.
+
+
 
 ## What's here
 
